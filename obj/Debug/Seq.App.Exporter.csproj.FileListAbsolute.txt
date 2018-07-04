@@ -1,0 +1,16 @@
+C:\Users\micher03\Documents\Visual Studio 2013\Projects\Seq.App.Summit.Logger\Seq.App.Summit.Logger\bin\Debug\Seq.App.Exporter.dll
+C:\Users\micher03\Documents\Visual Studio 2013\Projects\Seq.App.Summit.Logger\Seq.App.Summit.Logger\bin\Debug\Seq.App.Exporter.pdb
+C:\Users\micher03\Documents\Visual Studio 2013\Projects\Seq.App.Summit.Logger\Seq.App.Summit.Logger\bin\Debug\Newtonsoft.Json.dll
+C:\Users\micher03\Documents\Visual Studio 2013\Projects\Seq.App.Summit.Logger\Seq.App.Summit.Logger\bin\Debug\Seq.Apps.dll
+C:\Users\micher03\Documents\Visual Studio 2013\Projects\Seq.App.Summit.Logger\Seq.App.Summit.Logger\bin\Debug\Serilog.dll
+C:\Users\micher03\Documents\Visual Studio 2013\Projects\Seq.App.Summit.Logger\Seq.App.Summit.Logger\bin\Debug\Newtonsoft.Json.xml
+C:\Users\micher03\Documents\Visual Studio 2013\Projects\Seq.App.Summit.Logger\Seq.App.Summit.Logger\bin\Debug\Seq.Apps.pdb
+C:\Users\micher03\Documents\Visual Studio 2013\Projects\Seq.App.Summit.Logger\Seq.App.Summit.Logger\bin\Debug\Seq.Apps.xml
+C:\Users\micher03\Documents\Visual Studio 2013\Projects\Seq.App.Summit.Logger\Seq.App.Summit.Logger\bin\Debug\Serilog.xml
+C:\Users\micher03\Documents\Visual Studio 2013\Projects\Seq.App.Summit.Logger\Seq.App.Summit.Logger\obj\Debug\Seq.App.Exporter.csprojResolveAssemblyReference.cache
+C:\Users\micher03\Documents\Visual Studio 2013\Projects\Seq.App.Summit.Logger\Seq.App.Summit.Logger\obj\Debug\Seq.App.Exporter.dll
+C:\Users\micher03\Documents\Visual Studio 2013\Projects\Seq.App.Summit.Logger\Seq.App.Summit.Logger\obj\Debug\Seq.App.Exporter.pdb
+C:\Users\micher03\Documents\Visual Studio 2015\Projects\Seq.App.Exporter\bin\Debug\Seq.App.Exporter.dll
+C:\Users\micher03\Documents\Visual Studio 2015\Projects\Seq.App.Exporter\bin\Debug\Seq.App.Exporter.pdb
+C:\Users\micher03\Documents\Visual Studio 2015\Projects\Seq.App.Exporter\obj\Debug\Seq.App.Exporter.dll
+C:\Users\micher03\Documents\Visual Studio 2015\Projects\Seq.App.Exporter\obj\Debug\Seq.App.Exporter.pdb
