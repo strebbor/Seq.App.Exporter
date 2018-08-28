@@ -9,21 +9,21 @@ using System.Net;
 using System.Text;
 using System.Web.Script.Serialization;
 
-namespace Seq.App.Event.Exporter
+namespace Seq.App.Exporter
 {
     [SeqApp("Event Exporter",
       Description = "Exports events to custom endpoints")]
-    public class SummitLogger : Reactor, ISubscribeTo<LogEventData>
+    public class EventExporter : Reactor, ISubscribeTo<LogEventData>
     {
         [SeqAppSetting(
            DisplayName = "Posting URL",
-           HelpText = "The location where the event should be exported.",
+           HelpText = "The location where the event should be exported. ex http://www.site.com/endpoint",
            InputType = SettingInputType.Text)]
         public string PostingURL { get; set; }
 
         [SeqAppSetting(
           DisplayName = "Allowed Environment(s)",
-          HelpText = "The environment(s) which is allowed to use this app. (leave blank for everything, or key=value,value like for example: Environment=Website1,Website2 or Application=Website1)",
+          HelpText = "The environment(s) which is allowed to use this app. (leave blank for everything, or key=value,value   ex: Environment=Website1,Website2 or Application=Website1)",
           IsOptional = true,
           InputType = SettingInputType.Text)]
         public string AllowedEnvironments
@@ -56,7 +56,7 @@ namespace Seq.App.Event.Exporter
 
         [SeqAppSetting(
           DisplayName = "Fields to export",
-          HelpText = "Fields that should be exported (comma seperated).",
+          HelpText = "Fields that should be exported (comma seperated). ex EventID, Environment, Routine",
           InputType = SettingInputType.Text)]
         public string ExportFields
         {
@@ -98,7 +98,7 @@ namespace Seq.App.Event.Exporter
             string serializedObject = new JavaScriptSerializer().Serialize(results);
 
             //Submit the Object to whatever url the user specified.
-            WebResponse response = PostToWebservice(serializedObject);
+            string response = PostToWebservice(serializedObject);
         }
 
         private bool IsEnvironmentAllowed(IDictionary<string, object> eventProperties)
@@ -146,23 +146,34 @@ namespace Seq.App.Event.Exporter
             return results;
         }
 
-        private WebResponse PostToWebservice(string serializedObject)
+        public string PostToWebservice(string serializedObject)
         {
             Uri url = new Uri(PostingURL);
 
-            var http = (HttpWebRequest)WebRequest.Create(url);
-            http.Accept = "application/json";
-            http.ContentType = "application/json";
-            http.Method = "POST";
+            var request = (HttpWebRequest)WebRequest.Create(url);
+            request.Accept = "application/json";
+            request.ContentType = "application/json";
+            request.Method = "POST";
 
             ASCIIEncoding encoding = new ASCIIEncoding();
             Byte[] bytes = encoding.GetBytes(serializedObject);
 
-            Stream newStream = http.GetRequestStream();
-            newStream.Write(bytes, 0, bytes.Length);
-            newStream.Close();
+            string responseStream = "";
+            using (Stream newStream = request.GetRequestStream())
+            {
+                newStream.Write(bytes, 0, bytes.Length);
+                newStream.Close();
 
-            return http.GetResponse();
+                using (WebResponse response = request.GetResponse())
+                {
+                    using (StreamReader reader = new StreamReader(response.GetResponseStream()))
+                    {
+                        responseStream = reader.ReadToEnd().Trim();
+                    }
+                }
+            }
+
+            return responseStream;
         }
 
         static object ToDynamic(object o)

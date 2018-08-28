@@ -14,3 +14,8 @@ C:\Users\micher03\Documents\Visual Studio 2015\Projects\Seq.App.Exporter\bin\Deb
 C:\Users\micher03\Documents\Visual Studio 2015\Projects\Seq.App.Exporter\bin\Debug\Seq.App.Exporter.pdb
 C:\Users\micher03\Documents\Visual Studio 2015\Projects\Seq.App.Exporter\obj\Debug\Seq.App.Exporter.dll
 C:\Users\micher03\Documents\Visual Studio 2015\Projects\Seq.App.Exporter\obj\Debug\Seq.App.Exporter.pdb
+C:\Users\micher03\Documents\GitHub\Seq.App.Exporter\bin\Debug\Seq.App.Exporter.dll
+C:\Users\micher03\Documents\GitHub\Seq.App.Exporter\bin\Debug\Seq.App.Exporter.pdb
+C:\Users\micher03\Documents\GitHub\Seq.App.Exporter\obj\Debug\Seq.App.Exporter.csprojResolveAssemblyReference.cache
+C:\Users\micher03\Documents\GitHub\Seq.App.Exporter\obj\Debug\Seq.App.Exporter.dll
+C:\Users\micher03\Documents\GitHub\Seq.App.Exporter\obj\Debug\Seq.App.Exporter.pdb
