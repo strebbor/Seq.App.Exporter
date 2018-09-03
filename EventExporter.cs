@@ -17,7 +17,7 @@ namespace Seq.App.Exporter
     {
         [SeqAppSetting(
            DisplayName = "Posting URL",
-           HelpText = "The location where the event should be exported. ex http://www.site.com/endpoint",
+           HelpText = "The location where the event should be exported. ex http://www.site.com/endpointname",
            InputType = SettingInputType.Text)]
         public string PostingURL { get; set; }
 
@@ -51,7 +51,7 @@ namespace Seq.App.Exporter
             }
         }
         private string _allowedEnvironments;
-        private string _allowedEnvironmentsKey = "N/A";
+        private string _allowedEnvironmentsKey;
         private List<string> _allowedEnvironmentsValues = new List<string>();
 
         [SeqAppSetting(
