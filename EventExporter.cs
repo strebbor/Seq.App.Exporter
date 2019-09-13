@@ -8,6 +8,7 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Web.Script.Serialization;
+using Serilog;
 
 namespace Seq.App.Exporter
 {
@@ -80,6 +81,13 @@ namespace Seq.App.Exporter
         private string _exportFields;
         private List<string> ExportFieldsList = new List<string>();
 
+        [SeqAppSetting(
+       DisplayName = "Send the property value exactly as is",
+       HelpText = "If this is selected, the value of the property will be sent exactly as it appears in the log without being serialized. This option will only work if there are only one property in the 'Fields to export' list",
+       InputType = SettingInputType.Checkbox)]
+        public bool DoNotSerialize { get; set; }
+
+
         public void On(Event<LogEventData> evt)
         {
             //get the properties from the event that you selected
@@ -92,13 +100,22 @@ namespace Seq.App.Exporter
             }
 
             //Based on your setup, create a serializable key/value pair (key = property from setup, value = property value from log)
-            Dictionary<string, object> results = GetExportValues(evtProperties);
+            var results = GetExportValues(evtProperties);
 
             //create a JSON string from the object
             string serializedObject = new JavaScriptSerializer().Serialize(results);
 
+            if (DoNotSerialize && ExportFieldsList.Count == 1)
+            {
+                serializedObject = results[ExportFieldsList[0]].ToString();
+            }
+
+            Log.Information("{@SerializedObject}", serializedObject);
+
             //Submit the Object to whatever url the user specified.
             string response = PostToWebservice(serializedObject);
+
+            Log.Information("{@Response}", response);
         }
 
         private bool IsEnvironmentAllowed(IDictionary<string, object> eventProperties)

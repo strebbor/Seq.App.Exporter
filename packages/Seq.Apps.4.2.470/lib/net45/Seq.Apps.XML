@@ -150,6 +150,19 @@
             </summary>
             <param name="evt">The event.</param>
         </member>
+        <member name="T:Seq.Apps.ISubscribeToAsync`1">
+            <summary>
+            Subscribes a reactor to a typed event, with the event handled asynchronously.
+            </summary>
+            <typeparam name="TData">The type representing event data.</typeparam>
+        </member>
+        <member name="M:Seq.Apps.ISubscribeToAsync`1.OnAsync(Seq.Apps.Event{`0})">
+            <summary>
+            Invoked when an event is sent to a reactor.
+            </summary>
+            <param name="evt">The event.</param>
+            <returns>A <see cref="T:System.Threading.Tasks.Task"/> that will complete when the app has finished handling the event.</returns>
+        </member>
         <member name="T:Seq.Apps.LogEvents.LogEventData">
             <summary>
             Represents event data generated via log data.

@@ -2,8 +2,13 @@ C:\Users\micher03\Documents\GitHub\Seq.App.Exporter\bin\Debug\Seq.App.Exporter.d
 C:\Users\micher03\Documents\GitHub\Seq.App.Exporter\bin\Debug\Seq.App.Exporter.pdb
 C:\Users\micher03\Documents\GitHub\Seq.App.Exporter\bin\Debug\Newtonsoft.Json.dll
 C:\Users\micher03\Documents\GitHub\Seq.App.Exporter\bin\Debug\Seq.Apps.dll
+C:\Users\micher03\Documents\GitHub\Seq.App.Exporter\bin\Debug\Serilog.dll
 C:\Users\micher03\Documents\GitHub\Seq.App.Exporter\bin\Debug\Newtonsoft.Json.xml
 C:\Users\micher03\Documents\GitHub\Seq.App.Exporter\bin\Debug\Seq.Apps.pdb
 C:\Users\micher03\Documents\GitHub\Seq.App.Exporter\bin\Debug\Seq.Apps.xml
+C:\Users\micher03\Documents\GitHub\Seq.App.Exporter\bin\Debug\Serilog.pdb
+C:\Users\micher03\Documents\GitHub\Seq.App.Exporter\bin\Debug\Serilog.xml
+C:\Users\micher03\Documents\GitHub\Seq.App.Exporter\obj\Debug\Seq.App.Exporter.csproj.CoreCompileInputs.cache
+C:\Users\micher03\Documents\GitHub\Seq.App.Exporter\obj\Debug\Seq.App.Exporter.csproj.CopyComplete
 C:\Users\micher03\Documents\GitHub\Seq.App.Exporter\obj\Debug\Seq.App.Exporter.dll
 C:\Users\micher03\Documents\GitHub\Seq.App.Exporter\obj\Debug\Seq.App.Exporter.pdb
