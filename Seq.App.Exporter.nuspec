@@ -2,13 +2,13 @@
 <package >
   <metadata>
     <id>$id$</id>
-    <version>2.0.0.0</version>
+    <version>2.1</version>
     <title>SEQ Event Exporter</title>
     <authors>Michelle Robberts</authors>
     <owners>Michelle Robberts</owners>  
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>This app will export selected properties to the specified endpoint url, either as is or in a serialized string [key: value]</description>
-    <releaseNotes>Updated Serilog Version; Added ability to export value exactly as is without being serialized</releaseNotes>
+    <releaseNotes>Fixed bug on sending "send as is" events</releaseNotes>
     <copyright>Copyright 2019</copyright>
     <tags>seq-app Webservice Exporter Export Events Endpoint</tags>
   </metadata>

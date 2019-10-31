@@ -8,7 +8,6 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Web.Script.Serialization;
-using Serilog;
 
 namespace Seq.App.Exporter
 {
@@ -92,25 +91,28 @@ namespace Seq.App.Exporter
         {
             //get the properties from the event that you selected
             var evtProperties = (IDictionary<string, object>)ToDynamic(evt.Data.Properties ?? new Dictionary<string, object>());
-
             bool allowed = IsEnvironmentAllowed(evtProperties);
             if (!allowed)
             {
                 throw new Exception("App is not allowed to run for this event.");
             }
 
-            //Based on your setup, create a serializable key/value pair (key = property from setup, value = property value from log)
-            var results = GetExportValues(evtProperties);
+            string serializedObject = "";
 
-            //create a JSON string from the object
-            string serializedObject = new JavaScriptSerializer().Serialize(results);
-
-            if (DoNotSerialize && ExportFieldsList.Count == 1)
+            if (!DoNotSerialize || ExportFieldsList.Count > 1)
             {
-                serializedObject = results[ExportFieldsList[0]].ToString();
+                //Based on your setup, create a serializable key/value pair (key = property from setup, value = property value from log)
+                var results = GetExportValues(evtProperties);
+
+                //create a JSON string from the object
+                serializedObject = new JavaScriptSerializer().Serialize(results);
+            }
+            else
+            {
+                serializedObject = new JavaScriptSerializer().Serialize(evt.Data.Properties[ExportFieldsList[0]]);
             }
 
-            Log.Information("{@SerializedObject}", serializedObject);
+            Log.Information("{@SerializedObject} {@DoNotSerialize}", serializedObject, DoNotSerialize);
 
             //Submit the Object to whatever url the user specified.
             string response = PostToWebservice(serializedObject);
